@@ -12,7 +12,7 @@ nos dados coletados para treinar uma rede neural a manter o ambiente sempre agra
 
 ![ReinforcementLearning](tutorial/Reinforcement_learning_diagram.png "ReinforcementLearning")
 
-Utilizamos o conecito **Aprendizagem por reforço**, onde nesse caso teremos:
+Utilizamos o conceito **Aprendizagem por reforço**, onde nesse caso teremos:
 
 1. **Agente**: Será a rede neural, que irá aprender a controlar o sistema.
 2. **Ambiente**: Será caracterizado pelas medições do sensores (temperatura, umidade, luminosidade, intensidade do som).
