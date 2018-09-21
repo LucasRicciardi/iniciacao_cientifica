@@ -1,6 +1,27 @@
 # Controlador de Ar Condicionado
 
+
+## Sobre o projeto
+
+Este projeto tem como objetivo fornecer uma base para um sistema de controle inteligente de ar condicionado.
+Para isso faremos uso de sensores para coletar os dados do ambiente e aplicaremos técnicas de inteligência artifical
+nos dados coletados para treinar uma rede neural a manter o ambiente sempre agradável de acordo com as preferências do usuário.
+
+### Aprendizagem por reforço
+
+![ReinforcementLearning](tutorial/Reinforcement_learning_diagram.svg "ReinforcementLearning")
+
+Utilizamos o conecito **Aprendizagem por reforço**, onde nesse caso teremos:
+
+1. Agente: Será a rede neural, que irá aprender a controlar o sistema.
+2. Ambiente: Será caracterizado pelas medições do sensores (temperatura, umidade, luminosidade, intensidade do som).
+3. Ações: Serão uma das três ações: A = { aumentar temperatura em uma unidade, abaixar temperatura em uma unidade, nada }. 
+
+Portanto os objetivo principal do projeto é estabelecer um sistema de coleta de dados, aonde cada registro irá conter os dados do ambiente e a ação tomadada (aumentou a temperatura, abaixou a temperatura, etc.). Estes dados irão definir a preferência de temperatura do usuário e a rede deverá aprender a reagir com estes dados.
+
 ## 1 - Programação do MCU (Wemos)
+
+Segue o guia completo para programação do MCU usado no projeto.
 
 ### 1.1 - Setup do Ambiente
 
