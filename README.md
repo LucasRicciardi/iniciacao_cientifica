@@ -277,3 +277,9 @@ Abra o terminal de comando e navegue até a pasta `iniciacao-cientifica/applicat
 Abra o navegador e digite o endereço `localhost`.Se tudo ocorreu bem até agora você verá a página do dashboard.
 
 ![dashboard](tutorial/dashboard.png "Dashboard")
+
+Este dash board serve as funcionalidades da tabela acima de uma maneira mais acessível.
+
+1. Para abaixar/aumentar a temperatura, utilize as sextas ao lado do mostrador de temperatura
+2. Para abrir o menu de comandos, seleciona a engrenagem próxima ao mostrador de temperatura
+3. Para trocar o gráfico sendo mostrado, basta utilizar a barra de navegação instalada.
