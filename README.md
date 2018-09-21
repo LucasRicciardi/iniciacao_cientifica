@@ -27,7 +27,7 @@ a aquela desejada. Isso é feito usando termômetros internos. No nosso sistema,
 mas queremos que a rede aprenda as nossas preferências para que não seja necessário definir a temperatura manualmente.
 Para isso estamos assumindo que a rede usará um **comando básico para aumentar/diminuir a temperatura**.
 
-Este comando **não irá funcionar como o descritor no parágrafo anterior**. Ao enviar, por exemplo, um comano `aumentar-temperatura`, o comportamento que o sistema espera é que aja uma mudança perceptível na temperatura ambiente entre o envio do comando e próxima amostragem do ambiente.  
+Este comando **não irá funcionar como o descritor no parágrafo anterior**. Ao enviar um comando `aumentar-temperatura`, o comportamento que o sistema espera é que aja uma mudança perceptível na temperatura ambiente entre o envio do comando e próxima amostragem do ambiente.  
 
 ### Coleta de dados
 
