@@ -39,7 +39,7 @@ correspondente à `aumentar-temperatura`. Esta ação pode ser um número, umm e
 O sistema tem uma ação especial, a ação `nothing` de não fazer nada. Quando o sistema escolhe esta ação significa que o ambiente está agradável. Este sinal nunca será emitido pelo usuário, pois se o ambiente está agradável ele não irá alterar a temperatura !
 Para resolver o problema, a rede captura a cada **20 minutos** a temperatura e assume que ela está agradável. O tempo usado como estimativa para o usuário se sentir desconfortável e ajustar da temperatura é de 5 minutos..
 
-### Tutorial
+## Tutorial
 
 Segue abaixo um tutorial de como instalar toda a parte de infraestrutura de software do sistema.
 Assume conhecimentos em:
@@ -49,11 +49,11 @@ Assume conhecimentos em:
 3. Sistema Operacional
 4. Navegação Web
 
-## 1 - Programação do MCU (Wemos)
+### 1 - Programação do MCU (Wemos)
 
 Segue o guia completo para programação do MCU usado no projeto.
 
-### 1.1 - Setup do Ambiente
+#### 1.1 - Setup do Ambiente
 
 Para começar, baixe o editor de texto Atom (https://atom.io/) e instale.
 Depois, abra o editor de texto e depois abra o menu de configurações do editor (File -> Settings), 
@@ -68,13 +68,13 @@ Após o uso deste **plugin (PlatformIO)** eu recomendo a desinstação do mesmo,
 ou a instalação de um outro editor de texto, que é o que faremos a seguir.
 Segue um link, em inglês, com imagens para auxiliar na instalação do PlatformIo (http://docs.platformio.org/en/latest/ide/atom.html#installation)
  
-### 1.2 - Download das bibliotecas
+#### 1.2 - Download das bibliotecas
 
 Com o editor de texto **Atom** aberto, procure no menu principal a opção `PlatformIO -> PlatformIO Home`.
 Na página que se abrir, procure no menu pela opção **Libraries**, digite na barra de busca **"aREST"**
 e instale **apenas a opção com o nome correspondente** (pode surgir uma opção com nome aREST UI ou bREST, não instale nenhuma destas).
 
-### 1.3 - Setup do Projeto
+#### 1.3 - Setup do Projeto
 
 Vá até a página principal deste projeto e selecione a opção `Clone or download -> Download Zip` para fazer download deste projeto.
 Extraia o conteúdo do zip, renomeie a pasta **"iniciacao-cientifica-master"** para **"iniciacao-cientifica"** e copie esta pasta
@@ -88,7 +88,7 @@ Utilizando um cabo USB, conecte o Wemos ao computador e no menu do Atom, selecio
 
 Caso tudo tenha ocorrido corretamente, você verá o led piscar rapidamente, indicando a gravação do código no MCU.
 
-### 1.4 - Configuração do Wemos
+#### 1.4 - Configuração do Wemos
 
 Abra no editor de texto o arquivo **main.cpp**, dentro da pasta src, e procure pelo seguinte trecho de código:
 ```cpp
@@ -108,7 +108,7 @@ Abra no editor de texto o arquivo **main.cpp**, dentro da pasta src, e procure p
 ```
 Insira os dados da sua rede e descarrege (upload) o firmware novamente no dispositivo.
 
-### 1.5 - Verificação do Dispositivo
+#### 1.5 - Verificação do Dispositivo
 
 Para saber se tudo ocorreu bem, uma medida simples de relatório foi implementada usando o led embutido no **Wemos**.
 
@@ -120,7 +120,7 @@ Caso esteja piscando mais rapidamente, **em intervalos de 0.3 segundo**, o dispo
 Resumindo, caso você consiga contar o **tempo que o led ficou aceso**, 
 significa que as **configurações de rede estão incorretas**.
 
-### 1.6 - Verificação dos Endpoints
+#### 1.6 - Verificação dos Endpoints
 
 A biblioteca (aREST) que instalamos anteriormente expoe parâmetros do dispositivo como endpoints REST. Por exemplo,
 no trecho de código encontrado no arquivo **"main.cpp"**, declaramos variáveis para armazenar o valor lido pelos sensores:
@@ -198,7 +198,7 @@ Para os outros sensores o procedimento é o mesmo e já estâo implementados os 
 3. Luminosidade
 4. Intensidade do Som
 
-### 1.7 - Implementação de Controles
+#### 1.7 - Implementação de Controles
 
 Também é possível **ligar métodos aos endpoints**, no exemplo abaixo criamos uma função e ligamos ela a um endpoits
 `http://{ip do wemos}/{nome da função}` à execução daquela função. Isto signfica que se digitarmos o endereço do endpoint
@@ -244,14 +244,14 @@ Este recurso será de utilidade para implementar os métodos que irão atuar no 
 4. decreaseTemperature: Diminui a Temperature em uma unidade
 Para saber mais sobre as funções da biblioteca viside a página https://github.com/marcoschwartz/aREST
 
-### 1.8 - Finalizando o sistema
+#### 1.8 - Finalizando o sistema
 
 Agora que temos tudo funcionando, podemos ligar os sensores no sistema e testar utilizando as ferramentas apresentadas
 o funcionamento do sistema.
 
-## 2 - Utilização da API
+#### 2 - Utilização da API
  
-### 2.1 - Setup do Ambiente
+#### 2.1 - Setup do Ambiente
 Faça o download e instale os seguintes programas:
 
 1. **NodeJS** -> https://nodejs.org/en/download/
@@ -263,7 +263,7 @@ Faça o download e instale os seguintes programas:
 Após completar a instalação de todos os programas acima, abra o **Visual Studio Code** e selecione a opção
 `File -> Open Folder` e selecionar a pasta **application** dentro da pasta do projeto (iniciacao-cientifica).
 
-### 2.2 - Link com Dispositivo
+#### 2.2 - Link com Dispositivo
 
 Com o projeto aberto no **Visual Studio Code**, abra o arquivo `device-proxy.js`, dentro da pasta `routes/api`
 e procure pelo seguinte trecho de código:
@@ -302,7 +302,7 @@ let COMMANDS = [
 Na opção `DEVICE_ADDR` digite, no formato de string, o endereço ip selecionado para o dispositivo. As outras opções serão apresentadas
 mais a frente.
 
-### 2.3 - Endpoints
+#### 2.3 - Endpoints
 Este aplicativo que instalamos serve como um proxy para o Wemos que fornece uma segurança maior na conexão 
 e também alguns outros serviços interessantes como **banco de dados** e **inteligência artificial**.
 Todos os serviços estão mapeados nos seguintes endpoints:
@@ -322,7 +322,7 @@ Todos os serviços estão mapeados nos seguintes endpoints:
 | GET           | /api/device-proxy/deactivate-controller | Desativa o serviço de controle inteligente do dispositivo |
 | GET           | /api/device-proxy/train-controller      | Treina o serviço de controle inteligente do dispositivo   |
 
-### 2.4 - Utilizando o Dashboard
+#### 2.4 - Utilizando o Dashboard
 
 Abra o terminal de comando e navegue até a pasta `iniciacao-cientifica/application` e digite o comando `npm start`.
 
