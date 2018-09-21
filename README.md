@@ -204,7 +204,7 @@ Faça o download e instale os seguintes programas:
 Após completar a instalação de todos os programas acima, abra o **Visual Studio Code** e selecione a opção
 `File -> Open Folder` e selecionar a pasta **application** dentro da pasta do projeto (iniciacao-cientifica).
 
-### 1.2 - Link com Dispositivo
+#### 1.2 - Link com Dispositivo
 Com o projeto aberto no **Visual Studio Code**, abra o arquivo `device-proxy.js`, dentro da pasta `routes/api`
 e procure pelo seguinte trecho de código:
 
@@ -241,3 +241,14 @@ let COMMANDS = [
 ```
 Na opção `DEVICE_ADDR` digite, no formato de string, o endereço ip selecionado para o dispositivo. As outras opções serão apresentadas
 mais a frente.
+
+#### 1.3 - Endpoints
+Este aplicativo que instalamos serve como um proxy para o Wemos que fornece uma segurança maior na conexão 
+e também alguns outros serviços interessantes como **banco de dados** e **inteligência artificial**.
+Todos os serviços estão mapeados nos seguintes endpoints:
+
+| HTTP verbs    | Endpoints     | Recurso  |
+| ------------- |:-------------:|:--------:|
+| col 3 is      | right-aligned |    $1600 |
+| col 2 is      | centered      |      $12 |
+| zebra stripes | are neat      |       $1 |
