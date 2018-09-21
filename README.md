@@ -3,6 +3,7 @@
 ### 1 - Programação do MCU (Wemos)
 
 #### 1.1 - Setup do Ambiente
+
 Para começar, baixe o editor de texto Atom (https://atom.io/) e instale.
 Depois, abra o editor de texto e depois abra o menu de configurações do editor (File -> Settings), 
 e procure pela opção Install.
@@ -17,11 +18,13 @@ ou a instalação de um outro editor de texto, que é o que faremos a seguir.
 Segue um link, em inglês, com imagens para auxiliar na instalação do PlatformIo (http://docs.platformio.org/en/latest/ide/atom.html#installation)
  
 #### 1.2 - Download das bibliotecas
+
 Com o editor de texto **Atom** aberto, procure no menu principal a opção `PlatformIO -> PlatformIO Home`.
 Na página que se abrir, procure no menu pela opção **Libraries**, digite na barra de busca **"aREST"**
 e instale **apenas a opção com o nome correspondente** (pode surgir uma opção com nome aREST UI ou bREST, não instale nenhuma destas).
 
 #### 1.3 - Setup do Projeto
+
 Vá até a página principal deste projeto e selecione a opção `Clone or download -> Download Zip` para fazer download deste projeto.
 Extraia o conteúdo do zip, renomeie a pasta **"iniciacao-cientifica-master"** para **"iniciacao-cientifica"** e copie esta pasta
 para o seu Desktop.
@@ -35,6 +38,7 @@ Utilizando um cabo USB, conecte o Wemos ao computador e no menu do Atom, selecio
 Caso tudo tenha ocorrido corretamente, você verá o led piscar rapidamente, indicando a gravação do código no MCU.
 
 #### 1.4 - Configuração do Wemos
+
 Abra no editor de texto o arquivo **main.cpp**, dentro da pasta src, e procure pelo seguinte trecho de código:
 ```cpp
   namespace wifi {
@@ -54,6 +58,7 @@ Abra no editor de texto o arquivo **main.cpp**, dentro da pasta src, e procure p
 Insira os dados da sua rede e descarrege (upload) o firmware novamente no dispositivo.
 
 #### 1.5 - Verificação do Dispositivo
+
 Para saber se tudo ocorreu bem, uma medida simples de relatório foi implementada usando o led embutido no **Wemos**.
 
 Após a gravação do dispositivo, verifique o **led azul** piscando na placa. Caso ele esteja piscando **LENTAMENTE**,
@@ -65,6 +70,7 @@ Resumindo, caso você consiga contar o **tempo que o led ficou aceso**,
 significa que as **configurações de rede estão incorretas**.
 
 #### 1.6 - Verificação dos Endpoints
+
 A biblioteca (aREST) que instalamos anteriormente expoe parâmetros do dispositivo como endpoints REST. Por exemplo,
 no trecho de código encontrado no arquivo **"main.cpp"**, declaramos variáveis para armazenar o valor lido pelos sensores:
 ```cpp
@@ -142,6 +148,7 @@ Para os outros sensores o procedimento é o mesmo e já estâo implementados os 
 4. Intensidade do Som
 
 #### 1.7 - Implementação de Controles
+
 Também é possível **ligar métodos aos endpoints**, no exemplo abaixo criamos uma função e ligamos ela a um endpoits
 `http://{ip do wemos}/{nome da função}` à execução daquela função. Isto signfica que se digitarmos o endereço do endpoint
 no navegador da mesma forma que fizemos com as variáveis, esta função será chamada no microcontrolador.
@@ -187,6 +194,7 @@ Este recurso será de utilidade para implementar os métodos que irão atuar no 
 Para saber mais sobre as funções da biblioteca viside a página https://github.com/marcoschwartz/aREST
 
 #### 1.8 - Finalizando o sistema
+
 Agora que temos tudo funcionando, podemos ligar os sensores no sistema e testar utilizando as ferramentas apresentadas
 o funcionamento do sistema.
 
@@ -205,6 +213,7 @@ Após completar a instalação de todos os programas acima, abra o **Visual Stud
 `File -> Open Folder` e selecionar a pasta **application** dentro da pasta do projeto (iniciacao-cientifica).
 
 #### 1.2 - Link com Dispositivo
+
 Com o projeto aberto no **Visual Studio Code**, abra o arquivo `device-proxy.js`, dentro da pasta `routes/api`
 e procure pelo seguinte trecho de código:
 
@@ -262,4 +271,8 @@ Todos os serviços estão mapeados nos seguintes endpoints:
 | GET           | /api/device-proxy/deactivate-controller | Desativa o serviço de controle inteligente do dispositivo |
 | GET           | /api/device-proxy/train-controller      | Treina o serviço de controle inteligente do dispositivo   |
 
+#### 1.4 - Utilizando o Dashboard
 
+Abra o terminal de comando e navegue até a pasta `iniciacao-cientifica/application` e digite o comando `npm start`.
+Abra o navegador e digite o endereço `localhost`.Se tudo ocorreu bem até agora você verá a página do dashboard.
+![dashboard](tutorial/dashboard.png "Dashboard)
