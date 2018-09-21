@@ -39,26 +39,85 @@ Abra no editor de texto o arquivo **main.cpp**, dentro da pasta src, e procure p
   namespace wifi {
   
     // autenticação
-    const char * ssid = "";
-    const char * password = "";
+    const char * ssid = "Minha Rede Wifi";
+    const char * password = "Minha Senha";
    
     // Configurações de IP
     IPAddress ip(192, 168, 0, 200);
     IPAddress gateway(192, 168, 0, 1);
     IPAddress subnet(255, 255, 255, 0);
     
-    // resto do código otimido ...
+    // resto do código omitido ...
   }
 ```
 Insira os dados da sua rede e descarrege (upload) o firmware novamente no dispositivo.
 
 #### 1.5 - Verificação do Dispositivo
-Para saber se tudo ocorreu bem, uma medida simples de relatório foi implementada usando o led de status embutido no **Wemos**.
+Para saber se tudo ocorreu bem, uma medida simples de relatório foi implementada usando o led embutido no **Wemos**.
 
 Após a gravação do dispositivo, verifique o **led azul** piscando na placa. Caso ele esteja piscando **LENTAMENTE**,
 ou mais especificamente, **em intervalos de 1 segundo**, o dispositivo está tendo problemas para se conectar à rede wifi.
 
 Caso esteja piscando mais rapidamente, **em intervalos de 0.3 segundo**, o dispositivo está funcionando normalmente.
 
-Para ser mais simples, caso você consiga contar o **tempo que o led ficou aceso**, 
+Resumindo, caso você consiga contar o **tempo que o led ficou aceso**, 
 significa que as **configurações de rede estão incorretas**.
+
+#### 1.6 - Verificação dos Endpoints
+A biblioteca (aREST) que instalamos anteriormente expoe parâmetros do dispositivo como endpoints REST. Por exemplo,
+no trecho de código encontrado no arquivo **"main.cpp"**, declaramos variáveis para armazenar o valor lido pelos sensores:
+```cpp
+namespace model {
+
+  // variáveis para armazenar as leituras de sensores
+  double temperature = 0.0;
+  // ...  
+  
+  /*
+  * Lê o sensor de temperatura
+  */
+  double readTemperature() {
+    return random(0, 40);       // implementar aqui a função que realmente irá ler a temperatura
+  }
+}
+```
+Mais abaixo, na função `setup()` declaramos o seguinte trecho:
+```cpp
+
+// objeto de api rest e do servidor
+WiFiServer server(80);
+aREST rest = aREST();
+
+void setup() {
+  
+  // trecho de código omitido ...
+  
+  rest.variable("temperature", &model:temperature);
+  
+  // ...
+}
+```
+Este trecho de código cria um link entre o valor da variável temperature e o um endpoints rest no formato
+`http://{ip do wemos}/temperature`. Para exemplificar, abra o navegador (Chrome, Edge, etc) e digite na barra de navegação
+o endereço sugerido, substituindo **{ip do wemos}** pelo ip inserido no código:
+```cpp
+namespace wifi {
+  
+  // ...  
+  IPAddress ip(192, 168, 0, 200);  // Este é o endereço do exemplo, você deve colocar de acordo com suas configurações de rede
+  // ...
+}
+```
+Você verá o valor 0. Este valor irá ficar assim pois declaramos a variável e ligamos ela ao endpoit mas ainda não
+temos um método que atualiza ela, então vamos usar o método `double readTemperature()` no loop principal para atualizar
+a variável `temperature` com o valor lido pelo sensor, ou seja; 
+```cpp
+void loop() {
+  // ...
+  
+  model::temperature = model::readTemperature();
+  
+  // ...
+  
+}
+```
