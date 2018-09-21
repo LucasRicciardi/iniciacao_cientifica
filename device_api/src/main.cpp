@@ -33,8 +33,8 @@ namespace statusLed {
 namespace wifi {
 
   // autenticação
-  const char * ssid = "casa2";
-  const char * password = "casa1234";
+  const char * ssid = "Meu Wifi";
+  const char * password = "Minha Senaha";
 
   // Configurações de IP
   IPAddress ip(192, 168, 0, 200);
