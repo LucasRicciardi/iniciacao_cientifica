@@ -198,7 +198,8 @@ Faça o download e instale os seguintes programas:
 1. **NodeJS** -> https://nodejs.org/en/download/
 2. **MongoDB (Community Server)** -> https://www.mongodb.com/download-center
 3. **Visual Studio Code** -> https://code.visualstudio.com/
-Prestar atenção durante o download do **MongoDB** para selecionar a opção **Community Server** e não a opção **Atlas**.
+
+*Prestar atenção durante o download do **MongoDB** para selecionar a opção **Community Server** e não a opção **Atlas**.*
 
 Após completar a instalação de todos os programas acima, abra o **Visual Studio Code** e selecione a opção
 `File -> Open Folder` e selecionar a pasta **application** dentro da pasta do projeto (iniciacao-cientifica).
@@ -238,4 +239,5 @@ let COMMANDS = [
 ];
 
 ```
-Na opção `DEVICE_ADDR` digite, no formato de string, o endereço ip selecionado para o dispositivo.
+Na opção `DEVICE_ADDR` digite, no formato de string, o endereço ip selecionado para o dispositivo. As outras opções serão apresentadas
+mais a frente.
