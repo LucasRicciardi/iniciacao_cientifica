@@ -247,8 +247,19 @@ Este aplicativo que instalamos serve como um proxy para o Wemos que fornece uma 
 e também alguns outros serviços interessantes como **banco de dados** e **inteligência artificial**.
 Todos os serviços estão mapeados nos seguintes endpoints:
 
-| HTTP verbs    | Endpoints     | Recurso  |
-| ------------- |:-------------:|:--------:|
-| col 3 is      | right-aligned |    $1600 |
-| col 2 is      | centered      |      $12 |
-| zebra stripes | are neat      |       $1 |
+| HTTP verbs    | Endpoints                               | Recurso                                                   |
+| ------------- |:---------------------------------------:|:---------------------------------------------------------:|
+| GET           | /api/scenes                             | Retorna todas as cenas coletadas pelo sistema             |
+| POST          | /api/scenes                             | Salva uma nova cena no banco de dados                     |
+| GET           | /api/device-proxy                       | Retorna os dados dos sensores em tempo real               |
+| GET           | /api/device-proxy/activate              | Ativa o serviço de proxy do dispositivo                   |
+| GET           | /api/device-proxy/deactivate            | Desativa o serviço de proxy do dispositivo                |
+| GET           | /api/device-proxy/turn-on               | Liga o ar condicionado                                    |
+| GET           | /api/device-proxy/turn-off              | Desliga o ar condicionado                                 |
+| GET           | /api/device-proxy/increase-temperature  | Aumenta a temperatura do ar condicionado em uma unidade   |
+| GET           | /api/device-proxy/decrease-temperature  | Diminui a temperatura do ar condicionado em uma unidade   |
+| GET           | /api/device-proxy/activate-controller   | Ativa o serviço de controle inteligente do dispositivo    |
+| GET           | /api/device-proxy/deactivate-controller | Desativa o serviço de controle inteligente do dispositivo |
+| GET           | /api/device-proxy/train-controller      | Treina o serviço de controle inteligente do dispositivo   |
+
+
