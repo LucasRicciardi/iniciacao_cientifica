@@ -248,7 +248,7 @@ e também alguns outros serviços interessantes como **banco de dados** e **inte
 Todos os serviços estão mapeados nos seguintes endpoints:
 
 | HTTP verbs    | Endpoints                               | Recurso                                                   |
-| ------------- |:---------------------------------------:|:---------------------------------------------------------:|
+|:-------------:| --------------------------------------- | --------------------------------------------------------- |
 | GET           | /api/scenes                             | Retorna todas as cenas coletadas pelo sistema             |
 | POST          | /api/scenes                             | Salva uma nova cena no banco de dados                     |
 | GET           | /api/device-proxy                       | Retorna os dados dos sensores em tempo real               |
