@@ -9,7 +9,7 @@ nos dados coletados para treinar uma rede neural a manter o ambiente sempre agra
 
 ### Aprendizagem por reforço
 
-![ReinforcementLearning](tutorial/Reinforcement_learning_diagram.svg "ReinforcementLearning")
+![ReinforcementLearning](tutorial/Reinforcement_learning_diagram.png "ReinforcementLearning")
 
 Utilizamos o conecito **Aprendizagem por reforço**, onde nesse caso teremos:
 
