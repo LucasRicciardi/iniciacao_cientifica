@@ -17,16 +17,16 @@ ou a instalação de um outro editor de texto, que é o que faremos a seguir.
 Segue um link, em inglês, com imagens para auxiliar na instalação do PlatformIo (http://docs.platformio.org/en/latest/ide/atom.html#installation)
  
 #### 1.2 - Download das bibliotecas
-Com o editor de texto **Atom** aberto, procure no menu principal a opção **PlatformIO -> PlatformIO Home**.
+Com o editor de texto **Atom** aberto, procure no menu principal a opção `PlatformIO -> PlatformIO Home`.
 Na página que se abrir, procure no menu pela opção **Libraries**, digite na barra de busca **"aREST"**
 e instale **apenas a opção com o nome correspondente** (pode surgir uma opção com nome aREST UI ou bREST, não instale nenhuma destas).
 
 #### 1.3 - Setup do Projeto
-Vá até a página principal deste projeto e selecione a opção **"Clone or download -> Download Zip"** para fazer download deste projeto.
+Vá até a página principal deste projeto e selecione a opção `Clone or download -> Download Zip` para fazer download deste projeto.
 Extraia o conteúdo do zip, renomeie a pasta **"iniciacao-cientifica-master"** para **"iniciacao-cientifica"** e copie esta pasta
 para o seu Desktop.
 
-Com o editor de texto **Atom** aberto, vá novamente na opção **PlatformIO -> PlatformIO Home** e deste vez selecione no menu
+Com o editor de texto **Atom** aberto, vá novamente na opção `PlatformIO -> PlatformIO Home` e deste vez selecione no menu
 a opção **Home**. Selecione no menu Quick Access a opção **"Open Project"**. Navegue até o diretório do projeto 
 e abra o projeto **"Firmware"**. Caso tudo ocorrá bem, você verá a árvore do diretório no editor de texto.
 Utilizando um cabo USB, conecte o Wemos ao computador e no menu do Atom, selecione a opção 
@@ -83,6 +83,7 @@ namespace model {
 }
 ```
 Mais abaixo, na função `setup()` declaramos o seguinte trecho:
+
 ```cpp
 
 // objeto de api rest e do servidor
@@ -102,8 +103,9 @@ Este trecho de código cria um link entre o valor da variável temperature e o u
 
 `http://{ip do wemos}/temperature`
 
-Para exemplificar, abra o navegador (Chrome, Edge, etc) e digite na barra de navegação
+Abra o navegador (Chrome, Edge, etc) e digite na barra de navegação
 o endereço sugerido, substituindo **{ip do wemos}** pelo ip inserido no código:
+
 ```cpp
 namespace wifi {
   
@@ -119,6 +121,7 @@ namespace wifi {
 Você verá o valor 0. Este valor irá ficar assim pois declaramos a variável e ligamos ela ao endpoit mas ainda não
 temos um método que atualiza ela, então vamos usar o método `double readTemperature()` no loop principal para atualizar
 a variável `temperature` com o valor lido pelo sensor, ou seja:
+
 ```cpp
 void loop() {
 
@@ -201,3 +204,38 @@ Após completar a instalação de todos os programas acima, abra o **Visual Stud
 `File -> Open Folder` e selecionar a pasta **application** dentro da pasta do projeto (iniciacao-cientifica).
 
 ### 1.2 - Link com Dispositivo
+Com o projeto aberto no **Visual Studio Code**, abra o arquivo `device-proxy.js`, dentro da pasta `routes/api`
+e procure pelo seguinte trecho de código:
+
+```javascript
+
+// ###############################################################################################
+// # Modelo
+// ###############################################################################################
+
+// um minuto
+const ONE_MINUTE = 1000 * 60;
+
+// frequência que as amostras são salvas no banco de dados
+const SAMPLE_FREQUENCY = 20 * ONE_MINUTE;
+
+// frequência que a rede toma decisões
+var DECISION_FREQUENCY = 10 * ONE_MINUTE;
+
+// endereço ip do dispositivo (wemos, arduino, etc)
+const DEVICE_ADDR = '192.168.0.200';
+
+// arquivo que armazena a rede neural
+const NETWORK_FILE = 'network.json';
+
+// mapa de comandos
+let COMMANDS = [
+    'nothing',    
+    'increase-temperature',
+    'decrease-temperature',
+    'turn-on',
+    'turn-off'
+];
+
+```
+Na opção `DEVICE_ADDR` digite, no formato de string, o endereço ip selecionado para o dispositivo.
