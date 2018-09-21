@@ -16,7 +16,7 @@ Utilizamos o conceito **Aprendizagem por reforço**, onde nesse caso teremos:
 
 1. **Agente**: Será a rede neural, que irá aprender a controlar o sistema.
 2. **Ambiente**: Será caracterizado pelas medições do sensores (temperatura, umidade, luminosidade, intensidade do som).
-3. **Ações**: Serão uma das três ações: {aumentar temperatura em uma unidade, abaixar temperatura em uma unidade, nada}. 
+3. **Ações**: Será uma das três ações: {aumentar temperatura em uma unidade, abaixar temperatura em uma unidade, nada}. 
 
 Portanto os objetivo principal do projeto é estabelecer um sistema de coleta de dados, aonde cada registro irá conter os dados do ambiente e a ação tomadada (aumentou a temperatura, abaixou a temperatura, etc.). Estes dados irão definir a preferência de temperatura do usuário e a rede deverá aprender a reagir com estes dados.
 
