@@ -82,7 +82,7 @@ para o seu Desktop.
 
 Com o editor de texto **Atom** aberto, vá novamente na opção `PlatformIO -> PlatformIO Home` e deste vez selecione no menu
 a opção **Home**. Selecione no menu Quick Access a opção **"Open Project"**. Navegue até o diretório do projeto 
-e abra o projeto **"Firmware"**. Caso tudo ocorrá bem, você verá a árvore do diretório no editor de texto.
+e abra o projeto **"device_api"**. Caso tudo ocorrá bem, você verá a árvore do diretório no editor de texto.
 Utilizando um cabo USB, conecte o Wemos ao computador e no menu do Atom, selecione a opção 
 **PlatformIO -> Upload** para descarregar o firmware do Wemos. 
 
