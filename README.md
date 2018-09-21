@@ -1,6 +1,7 @@
 # Controlador de Ar Condicionado
 
 ### 1 - Programação do MCU (Wemos)
+
 #### 1.1 - Setup do Ambiente
 Para começar, baixe o editor de texto Atom (https://atom.io/) e instale.
 Depois, abra o editor de texto e depois abra o menu de configurações do editor (File -> Settings), 
@@ -97,8 +98,11 @@ void setup() {
   // ...
 }
 ```
-Este trecho de código cria um link entre o valor da variável temperature e o um endpoints rest no formato
-`http://{ip do wemos}/temperature`. Para exemplificar, abra o navegador (Chrome, Edge, etc) e digite na barra de navegação
+Este trecho de código cria um link entre o valor da variável temperature e o um endpoints rest no formato:
+
+`http://{ip do wemos}/temperature`
+
+Para exemplificar, abra o navegador (Chrome, Edge, etc) e digite na barra de navegação
 o endereço sugerido, substituindo **{ip do wemos}** pelo ip inserido no código:
 ```cpp
 namespace wifi {
@@ -114,7 +118,7 @@ namespace wifi {
 ```
 Você verá o valor 0. Este valor irá ficar assim pois declaramos a variável e ligamos ela ao endpoit mas ainda não
 temos um método que atualiza ela, então vamos usar o método `double readTemperature()` no loop principal para atualizar
-a variável `temperature` com o valor lido pelo sensor, ou seja; 
+a variável `temperature` com o valor lido pelo sensor, ou seja:
 ```cpp
 void loop() {
 
@@ -138,6 +142,7 @@ Para os outros sensores o procedimento é o mesmo e já estâo implementados os 
 Também é possível **ligar métodos aos endpoints**, no exemplo abaixo criamos uma função e ligamos ela a um endpoits
 `http://{ip do wemos}/{nome da função}` à execução daquela função. Isto signfica que se digitarmos o endereço do endpoint
 no navegador da mesma forma que fizemos com as variáveis, esta função será chamada no microcontrolador.
+A assinatura destas funções devem **sempre** retornar um `int` e recebem como argumento uma `String`.
 
 ```cpp
 namespace controllers {
@@ -176,8 +181,23 @@ Este recurso será de utilidade para implementar os métodos que irão atuar no 
 2. turnOff: Desliga o Ar Condicionado
 3. increaseTemperature: Aumenta a Temperatura em uma unidade
 4. decreaseTemperature: Diminui a Temperature em uma unidade
+Para saber mais sobre as funções da biblioteca viside a página https://github.com/marcoschwartz/aREST
 
 #### 1.8 - Finalizando o sistema
 Agora que temos tudo funcionando, podemos ligar os sensores no sistema e testar utilizando as ferramentas apresentadas
 o funcionamento do sistema.
 
+### 1 - Utilização da API
+ 
+#### 1.1 - Setup do Ambiente
+Faça o download e instale os seguintes programas:
+
+1. **NodeJS** -> https://nodejs.org/en/download/
+2. **MongoDB (Community Server)** -> https://www.mongodb.com/download-center
+3. **Visual Studio Code** -> https://code.visualstudio.com/
+Prestar atenção durante o download do **MongoDB** para selecionar a opção **Community Server** e não a opção **Atlas**.
+
+Após completar a instalação de todos os programas acima, abra o **Visual Studio Code** e selecione a opção
+`File -> Open Folder` e selecionar a pasta **application** dentro da pasta do projeto (iniciacao-cientifica).
+
+### 1.2 - Link com Dispositivo
