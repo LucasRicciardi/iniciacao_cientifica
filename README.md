@@ -20,6 +20,27 @@ Utilizamos o conecito **Aprendizagem por reforço**, onde nesse caso teremos:
 
 Portanto os objetivo principal do projeto é estabelecer um sistema de coleta de dados, aonde cada registro irá conter os dados do ambiente e a ação tomadada (aumentou a temperatura, abaixou a temperatura, etc.). Estes dados irão definir a preferência de temperatura do usuário e a rede deverá aprender a reagir com estes dados.
 
+### Controle de Temperatura
+
+Em um ar condicionado moderno, apenas selecionamos a temperatura e ele automaticamente ajusta a temperatura ambiente
+a aquela desejada. Isso é feito usando termômetros internos. No nosso sistema, não desejamos perder essa característica,
+mas queremos que a rede aprenda as nossas preferências para que não seja necessário definir a temperatura manualmente.
+Para isso estamos assumindo que a rede usará um **comando básico para aumentar/diminuir a temperatura**.
+
+Este comando **não irá funcionar como o descritor no parágrafo anterior**. Ao enviar, por exemplo, um comano `aumentar-temperatura`, o comportamento que o sistema espera é que aja uma mudança perceptível na temperatura ambiente entre o envio do comando e próxima amostragem do ambiente.  
+
+### Coleta de dados
+
+Como dito, o objetivo é coletar dados que descrevam a preferência do usuário.
+Para isso, coletamos os sinais exatamente quando eles são enviados pelo usuário, ou seja,
+se o usuário mandar aumentar a temperatura, o sistema irá coletar os dados do ambiente e salvar no banco de dados junto com a ação
+correspondente à `aumentar-temperatura`. Esta ação pode ser um número, umm enum, um string, etc. desde que exista um para cada ação.
+
+O sistema tem uma ação especial, a ação `nothing` de não fazer nada. Quando o sistema escolhe esta ação significa que o ambiente está agradável. Este sinal nunca será emitido pelo usuário, pois se o ambiente está agradável ele não irá alterar a temperatura !
+Para resolver o problema, a rede captura a cada **20 minutos** a temperatura e assume que ela está agradável. O tempo usado como estimativa para o usuário se sentir desconfortável e ajustar da temperatura é de 5 minutos.
+.
+
+
 ## 1 - Programação do MCU (Wemos)
 
 Segue o guia completo para programação do MCU usado no projeto.
