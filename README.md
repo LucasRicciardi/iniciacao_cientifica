@@ -275,4 +275,4 @@ Todos os serviços estão mapeados nos seguintes endpoints:
 
 Abra o terminal de comando e navegue até a pasta `iniciacao-cientifica/application` e digite o comando `npm start`.
 Abra o navegador e digite o endereço `localhost`.Se tudo ocorreu bem até agora você verá a página do dashboard.
-![dashboard](tutorial/dashboard.png "Dashboard)
+![dashboard](tutorial/dashboard.png "Dashboard")
