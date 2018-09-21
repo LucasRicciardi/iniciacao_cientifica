@@ -281,8 +281,11 @@ Abra o navegador e digite o endereço `localhost`.Se tudo ocorreu bem até agora
 
 ![dashboard](tutorial/dashboard.png "Dashboard")
 
-Este dash board serve as funcionalidades da tabela acima de uma maneira mais acessível.
+Este dash board apresenta as funcionalidades da tabela acima de uma maneira mais acessível.
 
 1. Para abaixar/aumentar a temperatura, utilize as sextas ao lado do mostrador de temperatura
 2. Para abrir o menu de comandos, seleciona a engrenagem próxima ao mostrador de temperatura
 3. Para trocar o gráfico sendo mostrado, basta utilizar a barra de navegação instalada.
+
+Com o sistema todo conectado, utilize o dashboard para enviar o comando `Ativar Proxy`para o sistema 
+e você verá os gráficos variando com a nova informações que sai dos dispositivos.
