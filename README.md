@@ -103,9 +103,13 @@ o endereço sugerido, substituindo **{ip do wemos}** pelo ip inserido no código
 ```cpp
 namespace wifi {
   
-  // ...  
-  IPAddress ip(192, 168, 0, 200);  // Este é o endereço do exemplo, você deve colocar de acordo com suas configurações de rede
+  // trecho de código omitido ...  
+  
+  // Este é o endereço do exemplo, você deve colocar de acordo com suas configurações de rede
+  IPAddress ip(192, 168, 0, 200);
+  
   // ...
+  
 }
 ```
 Você verá o valor 0. Este valor irá ficar assim pois declaramos a variável e ligamos ela ao endpoit mas ainda não
@@ -113,7 +117,8 @@ temos um método que atualiza ela, então vamos usar o método `double readTempe
 a variável `temperature` com o valor lido pelo sensor, ou seja; 
 ```cpp
 void loop() {
-  // ...
+
+  // trecho de código omitido ...
   
   model::temperature = model::readTemperature();
   
@@ -121,3 +126,58 @@ void loop() {
   
 }
 ```
+Desta forma, toda vez que você digitar o endereço na barra de navegação e clicar enter, verá um valor diferente.
+Resta substituir o `random()` pela implementação real do sensor.
+Para os outros sensores o procedimento é o mesmo e já estâo implementados os sensores de:
+1. Temperatura
+2. Umidade
+3. Luminosidade
+4. Intensidade do Som
+
+#### 1.7 - Implementação de Controles
+Também é possível **ligar métodos aos endpoints**, no exemplo abaixo criamos uma função e ligamos ela a um endpoits
+`http://{ip do wemos}/{nome da função}` à execução daquela função. Isto signfica que se digitarmos o endereço do endpoint
+no navegador da mesma forma que fizemos com as variáveis, esta função será chamada no microcontrolador.
+
+```cpp
+namespace controllers {
+
+  // trecho de código omitido ...
+  
+  /*
+  * Aumenta em uma unidade a temperatura do ar condicionado
+  */
+  int increaseTemperature(String) {
+    statusLed::on();
+    delay(5000);
+    statusLed::off();
+    return 0;
+  }
+  
+  // ...
+  
+}
+
+// ...
+
+void setup() {
+
+  // trecho de código omitido ...
+  
+  rest.function("increase-temperature", controllers::increaseTemperature);
+  
+  // ...
+  
+}
+
+```
+Este recurso será de utilidade para implementar os métodos que irão atuar no ar condicionado. No código já estão implementados os métodos:
+1. turnOn: Liga o Ar Condicionado
+2. turnOff: Desliga o Ar Condicionado
+3. increaseTemperature: Aumenta a Temperatura em uma unidade
+4. decreaseTemperature: Diminui a Temperature em uma unidade
+
+#### 1.8 - Finalizando o sistema
+Agora que temos tudo funcionando, podemos ligar os sensores no sistema e testar utilizando as ferramentas apresentadas
+o funcionamento do sistema.
+
