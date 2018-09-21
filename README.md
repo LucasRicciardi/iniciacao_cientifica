@@ -56,8 +56,8 @@ Segue o guia completo para programação do MCU usado no projeto.
 #### 1.1 - Setup do Ambiente
 
 Para começar, baixe o editor de texto Atom (https://atom.io/) e instale.
-Depois, abra o editor de texto e depois abra o menu de configurações do editor (File -> Settings), 
-e procure pela opção Install.
+Depois, abra o editor de texto e depois abra o menu de configurações do editor `File -> Settings`, 
+e procure pela opção **Install**.
 
 No menu que se abrir, digite na barra de buscas platformio-ide e instale a opção com o nome correspondente.
 Durante a instalação será solicita a instalação do **CLANG**, quando isto acontecer **RECUSE** pois
