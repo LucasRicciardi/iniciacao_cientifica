@@ -37,9 +37,17 @@ se o usuário mandar aumentar a temperatura, o sistema irá coletar os dados do 
 correspondente à `aumentar-temperatura`. Esta ação pode ser um número, umm enum, um string, etc. desde que exista um para cada ação.
 
 O sistema tem uma ação especial, a ação `nothing` de não fazer nada. Quando o sistema escolhe esta ação significa que o ambiente está agradável. Este sinal nunca será emitido pelo usuário, pois se o ambiente está agradável ele não irá alterar a temperatura !
-Para resolver o problema, a rede captura a cada **20 minutos** a temperatura e assume que ela está agradável. O tempo usado como estimativa para o usuário se sentir desconfortável e ajustar da temperatura é de 5 minutos.
-.
+Para resolver o problema, a rede captura a cada **20 minutos** a temperatura e assume que ela está agradável. O tempo usado como estimativa para o usuário se sentir desconfortável e ajustar da temperatura é de 5 minutos..
 
+### Tutorial
+
+Segue abaixo um tutorial de como instalar toda a parte de infraestrutura de software do sistema.
+Assume conhecimentos em:
+
+1. Programação
+2. Redes
+3. Sistema Operacional
+4. Navegação Web
 
 ## 1 - Programação do MCU (Wemos)
 
