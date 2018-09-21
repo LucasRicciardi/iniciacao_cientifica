@@ -242,7 +242,8 @@ Este recurso será de utilidade para implementar os métodos que irão atuar no 
 2. turnOff: Desliga o Ar Condicionado
 3. increaseTemperature: Aumenta a Temperatura em uma unidade
 4. decreaseTemperature: Diminui a Temperature em uma unidade
-Para saber mais sobre as funções da biblioteca viside a página https://github.com/marcoschwartz/aREST
+
+Para saber mais sobre as funções da biblioteca **aREST** viside a página https://github.com/marcoschwartz/aREST.
 
 #### 1.8 - Finalizando o sistema
 
@@ -328,7 +329,7 @@ Abra o terminal de comando e navegue até a pasta `iniciacao-cientifica/applicat
 
 ![start-server](tutorial/start-server.png "Start Server")
 
-Abra o navegador e digite o endereço `localhost`.Se tudo ocorreu bem até agora você verá a página do dashboard.
+Abra o navegador e digite o endereço `localhost`. Se tudo ocorreu bem até agora você verá a página do dashboard.
 
 ![dashboard](tutorial/dashboard.png "Dashboard")
 
