@@ -343,4 +343,4 @@ Este dash board apresenta as funcionalidades da tabela acima de uma maneira mais
 3. Para trocar o gráfico sendo mostrado, basta utilizar a barra de navegação instalada.
 
 Com o sistema todo conectado, utilize o dashboard para enviar o comando `Ativar Proxy` para o sistema 
-e você verá os gráficos variando com a nova informações que sai dos dispositivos.
+e você verá os gráficos variando com as novas informações que saem do dispositivo (Wemos).
