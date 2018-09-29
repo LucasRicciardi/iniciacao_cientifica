@@ -104,6 +104,7 @@ Abra no editor de texto o arquivo **main.cpp**, dentro da pasta src, e procure p
     IPAddress subnet(255, 255, 255, 0);
     
     // resto do código omitido ...
+  
   }
 ```
 Insira os dados da sua rede e descarrege (upload) o firmware novamente no dispositivo.
@@ -129,6 +130,7 @@ namespace model {
 
   // variáveis para armazenar as leituras de sensores
   double temperature = 0.0;
+  
   // ...  
   
   /*
@@ -154,9 +156,10 @@ void setup() {
   rest.variable("temperature", &model:temperature);
   
   // ...
+
 }
 ```
-Este trecho de código cria um link entre o valor da variável temperature e o um endpoints rest no formato:
+Este trecho de código cria um link entre o valor da variável `temperature` e um **endpoint rest** no formato:
 
 `http://{ip do wemos}/temperature`
 
